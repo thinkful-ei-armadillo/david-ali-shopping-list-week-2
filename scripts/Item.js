@@ -12,13 +12,11 @@ const Item = (function(){
       name: name,
       id: cuid(),
       checked: false
-    }
-  }
+    };
+  };
 
   return {
     validateName: validateName,
     create: create
   };
 }());
-
-//Item.create('apples');
