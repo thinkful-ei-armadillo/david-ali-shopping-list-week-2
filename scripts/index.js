@@ -6,7 +6,7 @@
 $(document).ready(function() {
   shoppingList.bindEventListeners();
   shoppingList.render();
-  const itemNames = [ '', 'test item 1', 'test item 2' ];
+  const itemNames = [ '', 'test item 1', 'test item 4' ];
   itemNames.forEach(name => {
     try {
       Item.validateName(name);
