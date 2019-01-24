@@ -1,5 +1,5 @@
 'use strict';
-/* global $, cuid, Item */
+/* global $, cuid, Item, shoppingList */
 
 const store = (function () {
   const items = [
@@ -22,10 +22,10 @@ const store = (function () {
     } catch(err) {
       console.log(`${name}: Cannot add this, ${err.message}`);
     }
-  }
+  };
   const findAndToggleChecked = function(id) {
     this.findById(id).checked = !(this.findById(id).checked);
-  }
+  };
 
   const findAndUpdateName = function(id, newName) {
     try {
@@ -33,14 +33,14 @@ const store = (function () {
       this.findById(id).name = newName;
       shoppingList.render();
     } catch(err) {
-      console.log(`${name}: Cannot update this name: ${err.message}`)
+      console.log(`${name}: Cannot update this name: ${err.message}`);
     }
+  };
   
   const findAndDelete = function(id) {
     this.items = this.items.filter(element => element.id !== id);
-  }  
+  };  
 
-  }
 
 
   return {
