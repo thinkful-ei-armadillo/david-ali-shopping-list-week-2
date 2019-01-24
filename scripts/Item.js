@@ -1,13 +1,13 @@
-//'use strict';
+'use strict';
 /* global, $, cuid  */
 
 const Item = (function(){
-  validateName: function(name) {
+  const validateName = function(name) {
     if (name === '') {
-      throw TypeError("Name does not exist");
+      throw TypeError('Name does not exist');
     }
   };
-  create: function(name) {
+  const create = function(name) {
     return {
       name: name,
       id: cuid(),
