@@ -55,23 +55,12 @@ const shoppingList = (function(){
     $('.js-shopping-list').html(shoppingListItemsString);
   }
   
-  
-  function addItemToShoppingList(itemName) {
-    try{ 
-      Item.validateName(itemName);
-      store.items.push(Item.create(itemName));
-      render();
-    } catch(err){
-      console.log(`Cannot add item: ${err.message}`);
-    }
-  }
-  
   function handleNewItemSubmit() {
     $('#js-shopping-list-form').submit(function (event) {
       event.preventDefault();
       const newItemName = $('.js-shopping-list-entry').val();
       $('.js-shopping-list-entry').val('');
-      addItemToShoppingList(newItemName);
+      store.addItem(newItemName);
       render();
     });
   }
